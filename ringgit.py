@@ -1,19 +1,21 @@
 from num2words import num2words
+import locale
+
+locale.setlocale(locale.LC_ALL,'')
 
 
-def to_decimal(number, decimal=2):
+def to_decimal(number):
     '''
     to_decimal returns the given number as a string 
-    with the given decimal places.
+    with groupped by thousands with 2 decimal places.
 
     number is a number
-    decimal is a number (default: 2)
 
     Usage:
     to_decimal(1) -> "1.00"
+    to_decimal(1000) -> "1,000.00"
     '''
-    format_string = "{:." + str(decimal) + "f}"
-    return format_string.format(number)
+    return locale.currency(number,symbol=False,grouping=True)
 
 
 def to_ringgit_word(amount):
