@@ -1,5 +1,7 @@
 # Ringgit Text
 
+DEPRECEATED: Problem install num2words package via pipenv.
+
 This is python package written to, translate a given amount into a Ringgit string.
 
 A Ringgit string can be in 2 formats:
